@@ -93,11 +93,18 @@ getProducts().then((res) => {
   });
 });
 
+// const count = (data, id) => () => {
+//   parseInt(count_buyed_products.textContent++);
+//   count_buyed_products.className = "count_visible";
+//   cartItems(id);
+//   addCart(data, id);
+// };
 const count = (data, id) => () => {
   parseInt(count_buyed_products.textContent++);
   count_buyed_products.className = "count_visible";
-  cartItems(id);
   addCart(data, id);
+  cartItems(id);
+
 };
 
 function presentCards(res, data) {
