@@ -84,7 +84,7 @@ async function getProducts() {
 }
 
 getProducts().then((res) => {
-  console.log(res);
+  // console.log(res);
   res.map((el) => {
     presentCards(el, res);
     if (localStorage.getItem("cart")) {
@@ -93,18 +93,10 @@ getProducts().then((res) => {
   });
 });
 
-// const count = (data, id) => () => {
-//   parseInt(count_buyed_products.textContent++);
-//   count_buyed_products.className = "count_visible";
-//   cartItems(id);
-//   addCart(data, id);
-// };
 const count = (data, id) => () => {
   parseInt(count_buyed_products.textContent++);
   count_buyed_products.className = "count_visible";
   addCart(data, id);
-  cartItems(id);
-
 };
 
 function presentCards(res, data) {
@@ -126,37 +118,25 @@ function presentCards(res, data) {
   textBox.append(h5, p, button_add_cart);
   card.appendChild(textBox);
   rightSide.append(card);
-
+  console.log(res, "res");
   button_add_cart.addEventListener("click", count(data, res.id));
 }
 
 let cartStorage = JSON.parse(localStorage.getItem("cart")) || [];
 function addCart(data, id) {
   let product = data.find((el) => el.id === id);
-  // if (cartStorage.length === 0) {
-  //   cartStorage.push(product);
+  cartStorage.push(product);
 
-  // } 
-  // if{
-    cartStorage.push(product);
-    let res = cartStorage?.find((el) => el.id === id);
-    // if (res === undefined) {
-
-      // return cartStorage.push(product);
-    // }
-  // }
   localStorage.setItem("cart", JSON.stringify(cartStorage));
-  console.log(product,'product');
-
-  // console.log(data)
 }
 let total = 0;
 function cartItems(id) {
-  const del_btn_div = document.createElement("div");
-  const btn_del = document.createElement("button");
-  console.log(id)
+  // console.log(id)
   JSON.parse(localStorage.getItem("cart"))?.filter((el) => {
     if (el.id === id) {
+      console.log(el, "el");
+      const del_btn_div = document.createElement("div");
+      const btn_del = document.createElement("button");
       const img = document.createElement("img");
       img.className = "cart_img";
       img.src = el.image;
@@ -169,9 +149,10 @@ function cartItems(id) {
       total += parseInt(el.price);
       del_btn_div.append(btn_del);
       cart_products.append(img, desc, price, del_btn_div);
+
+      btn_del.addEventListener("click", delete_cart_item(id));
     }
   });
-  btn_del.addEventListener("click", delete_cart_item(id));
 
   totalPrice.textContent = total + " AMD";
 }
@@ -180,15 +161,6 @@ const delete_cart_item = (id) => () => {
   let data = cartStorage.filter((el) => el.id !== id);
   localStorage.setItem("cart", JSON.stringify(data));
 };
-
-
-// cartIcon.addEventListener("click", () => {
-//   if (cart.className === "cart_box") {
-//     cart.className = "cart_box_visible";
-//   } else {
-//     cart.className = "cart_box";
-//   }
-// });
 
 //  featured
 
@@ -200,10 +172,8 @@ window.onload = () => {
   generateRandomCards(productData);
 };
 
-
 function generateRandomCards(arr) {
   const r = Math.floor(Math.random() * arr.length);
-  console.log("hour card is:", arr[r]);
   const image = document.createElement("img");
   image.className = "img_sm";
   image.src = arr[r].image;
@@ -214,11 +184,9 @@ function generateRandomCards(arr) {
   box.append(image, desc, price);
 }
 
-
 //  date
 
 date.textContent = new Date().getFullYear();
-
 
 // modal window inplementation
 
@@ -226,15 +194,15 @@ let modal = document.getElementById("myModal");
 
 let span = document.querySelector(".close");
 
-cartIcon.onclick = function() {
+cartIcon.onclick = function () {
   modal.style.display = "block";
-}
-span.onclick = function() {
+};
+span.onclick = function () {
   modal.style.display = "none";
-}
+};
 
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+};
