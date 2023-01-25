@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="icon/png" href="./images/images-PhotoRoom.png" />
+    <title>Creative Silver</title>
+    <script
+      src="https://kit.fontawesome.com/e3325bedec.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img class="logo" src="./images/images-PhotoRoom.png" alt="" />
+      </div>
+
+      <ul class="nav-links">
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+        <div class="menu">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li>
+            <a>
+              <img
+                src="./images/shopping-cart.png"
+                alt=""
+                class="cart"
+                id="myBtn"
+              />
+              <span class="count">0</span>
+            </a>
+          </li>
+        </div>
+      </ul>
+    </nav>
+
+    <div class="main">
+      <!-- <div class="sidebar"> -->
+      <div class="sidebar">
+        <div class="top">
+          <h2>Categories</h2>
+          <p>All products</p>
+          <p>Rings</p>
+          <p>Broochs</p>
+          <p>Braclets</p>
+          <p>Earnings</p>
+        </div>
+        <div class="bottom">
+          <h2>Featured</h2>
+          <!-- <div class="card_small">
+            <div class="img">
+              <img
+                
+                alt=""
+                class="img_featured"
+              />
+            </div>
+            <div class="desc">
+              <h5>Braclet</h5>
+              <p>20000 AMD</p>
+            </div>
+          </div>
+          <div class="card_small">
+            <div class="img">
+              <img  alt="" class="img_featured" />
+            </div>
+            <div class="desc">
+              <h5>Pendant</h5>
+              <p>15000 AMD</p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <!-- </div> -->
+      <div class="right_side"></div>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="cart_box">
+            <h3>Cart Products</h3>
+            <div class="items"></div>
+            <span>Total amount is </span>
+            <h4></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="media">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-twitter"></i>
+      </div>
+      <a href="#"><img src="https://www.joinsmarty.com/landers/assets/images/bluearrow-up.gif" alt="" style="width: 30px; height: 40px; position: absolute;right: 20px;"></a>
+      <p>&copy; All rights reserved <span class="date"></span></p>
+    </footer>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
