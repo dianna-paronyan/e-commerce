@@ -35,7 +35,6 @@ li {
 .menu {
   display: flex;
   flex-wrap: wrap;
-  /* gap: 1em; */
   font-size: 18px;
   position: relative;
 }
@@ -56,7 +55,6 @@ input[type="checkbox"] {
 .hamburger {
   display: none;
   font-size: 24px;
-  /* user-select: none; */
 }
 
 .count {
@@ -79,15 +77,7 @@ input[type="checkbox"] {
 .cart_box {
   display: none;
 }
-/* .cart_box_visible{
-  width: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
-  border: 1px solid rgb(63, 63, 63);
-} */
+
 .cart_img {
   width: 100px;
 }
@@ -156,7 +146,7 @@ input[type="checkbox"]:checked ~ .menu {
   padding: 20px;
   margin: auto;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 820px) {
   .main {
     flex-direction: column;
   }
@@ -184,6 +174,7 @@ input[type="checkbox"]:checked ~ .menu {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   width: 250px;
+  height: 270px;
 }
 .card img:hover {
   transform: scale(1);
@@ -193,8 +184,7 @@ input[type="checkbox"]:checked ~ .menu {
   transition-delay: 0.5s;
   transition-property: all;
   cursor: pointer;
-  vertical-align: top;
-  object-fit: none;
+  object-fit: cover;
 }
 
 .text_box {
@@ -208,9 +198,13 @@ input[type="checkbox"]:checked ~ .menu {
 .btn_add_cart {
   width: 80px;
   height: 30px;
-  background-color: #e2d3c3;
+  background-color: #edddcc;
   border: none;
   cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.btn_add_cart:hover{
+  background-color: #f8ecdf;
 }
 
 .img_sm {
@@ -220,7 +214,6 @@ input[type="checkbox"]:checked ~ .menu {
 .del_btn {
   width: 60px;
   height: 30px;
-  /* padding: 10px; */
 }
 
 .cart_box {
@@ -257,6 +250,13 @@ footer {
 footer i {
   font-size: 24px;
   color: #3b3b3b;
+}
+.media{
+  display: flex;
+  gap:10px;
+}
+.media i:hover{
+  color: #5c8f8f;
 }
 
 .modal {
