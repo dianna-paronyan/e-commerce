@@ -99,6 +99,8 @@ const count = (data, id) => () => {
   addCart(data, id)
 }
 
+// show data
+
 function presentCards(res, data) {
   const card = document.createElement('div')
   card.className = 'card'
@@ -122,13 +124,19 @@ function presentCards(res, data) {
   button_add_cart.addEventListener('click', count(data, res.id))
 }
 
+// add items in localstorage
+
 let cartStorage = JSON.parse(localStorage.getItem('cart')) || []
+
 function addCart(data, id) {
   let product = data.find((el) => el.id === id)
   cartStorage.push(product)
 
   localStorage.setItem('cart', JSON.stringify(cartStorage))
 }
+
+// show items in cart
+
 let total = 0
 function cartItems(id) {
   // console.log(id)
