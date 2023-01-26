@@ -1,1 +1,1 @@
-# e-commerce
+# e-commerce silver accessories project 
