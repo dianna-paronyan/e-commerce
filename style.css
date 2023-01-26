@@ -242,7 +242,6 @@ footer {
   flex-direction: column;
   gap: 12px;
   margin-top: 30px;
-  /* background-color: rgba(0, 0, 0, 0.4); */
   background-color: rgba(231, 212, 218, 0.5);
   padding: 23px 20px;
 }
