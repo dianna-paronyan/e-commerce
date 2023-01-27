@@ -10,72 +10,62 @@ const productData = [
   {
     id: 1,
     image: 'images/2956afcacb8bf9ac0cf1baf5deec8e0d.jpg',
-    description: 'Braclet',
-    price: '10000AMD',
-    count: 0,
+    description: 'Imagination | Bracelet',
+    price: '20000AMD',
   },
   {
     id: 2,
-    image: 'images/brooch1.jpg',
-    description: 'Brooch',
-    price: '8000AMD',
-    count: 0,
+    image: 'images/brooch2.jpg',
+    description: 'White and Black | Brooch',
+    price:'15000'
   },
   {
     id: 3,
     image: 'images/pendant1.jpg',
-    description: 'Pendant',
+    description: 'Beehive | Pendant',
     price: '25000AMD',
-    count: 0,
   },
   {
     id: 4,
     image: 'images/ring7.jpg',
-    description: 'Ring',
-    price: '15000AMD',
-    count: 0,
+    description: 'Chrysanthemum | Ring',
+    price: '18000AMD',
   },
   {
     id: 5,
     image: 'images/1_Palisade.jpg',
-    description: 'Braclet',
-    price: '15000AMD',
-    count: 0,
+    description: 'Palisade | Bracelet',
+    price: '35000AMD',
   },
   {
     id: 6,
     image: 'images/ring6.jpg',
-    description: 'Ring',
-    price: '15000AMD',
-    count: 0,
+    description: 'Constellation | Ring',
+    price: '20000AMD',
   },
   {
     id: 7,
     image: 'images/pendant3.jpg',
-    description: 'Pendant',
+    description: 'Nocturne | Pendant',
     price: '20000AMD',
-    count: 0,
   },
   {
     id: 8,
     image: 'images/earning1.jpg',
-    description: 'Earning',
+    description: 'Frozen music | Earrings',
     price: '15000AMD',
-    count: 0,
   },
   {
     id: 9,
-    image: 'images/brooch2.jpg',
-    description: 'Brooch',
-    price: '10000AMD',
-    count: 0,
+    image:'images/1_Armenian-medieval-loom.webp',
+    description: 'Armenian medieval | Earrings',
+    price: '25000AMD',
   },
   {
     id: 10,
     image: 'images/1_The-world-in-the-palm.jpg',
-    description: 'Braclet',
-    price: '20000AMD',
-    count: 0,
+    description: 'The world in the palm | Bracelet',
+    price: '30000AMD',
   },
 ]
 
@@ -111,13 +101,13 @@ function presentCards(res, data) {
   const button_add_cart = document.createElement('button')
   button_add_cart.className = 'btn_add_cart'
   button_add_cart.textContent = 'add to cart'
-  const h5 = document.createElement('h5')
+  const h4 = document.createElement('h4')
   const p = document.createElement('p')
   image.src = res.image
-  h5.textContent = res.description
+  h4.textContent = res.description
   p.textContent = res.price
   card.appendChild(image)
-  textBox.append(h5, p, button_add_cart)
+  textBox.append(h4, p, button_add_cart)
   card.appendChild(textBox)
   rightSide.append(card)
   console.log(res, 'res')
